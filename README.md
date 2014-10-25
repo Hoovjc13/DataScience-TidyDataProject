@@ -3,6 +3,7 @@ DataScience-TidyDataProject
 
 Repo for Data Science Class Getting and Cleaning Data Course Project
 
+###Overview
 The R script "run_analysis.r" submitted in this project repo 
 is designed to transform relevant raw data files from the UCI
 Machine Learning Repository study of Human Activity Recognition Using
@@ -17,8 +18,7 @@ each activity and each subject.
 * In addition to the base R package the following packages are installed on
 	the users computer:  "stringr", "reshape2"
 
-###Running the script will perform the following sequence of actions in order 
-to produce the desired tidy data set:
+###Running the script will perform the following sequence of actions in order to produce the desired tidy data set:
 
 ###Section 1: Merge the training and test data files to create one data set
 * the raw data files are read into R using read.table
@@ -33,9 +33,7 @@ to produce the desired tidy data set:
 * the test and training data frames are then combined into a single
 	data frame
 
-###Section 2: Subset the data file to extract only the measurements on the mean
-and standard deviation for each measurement (see CodeBook for information on
-the determination of the appropriate fields to be retained)
+###Section 2: Subset the data file to extract only the measurements on the mean and standard deviation for each measurement (see CodeBook for information on the determination of the appropriate fields to be retained)
 * a logical vector is created identifying fields with the mean or standard
 	deviation for each measurement assigning TRUE to variables to be retained
 * the logical vector is appended with two additional TRUE elements to
@@ -59,8 +57,7 @@ the determination of the appropriate fields to be retained)
 * resulting vector of descriptive variable names is reinserted as the column
 	headers of the data set
 	
-###Section 5: Create an independent tidy data set with the average of each variable
-for each activity and each subject
+###Section 5: Create an independent tidy data set with the average of each variable for each activity and each subject
 * the melt command from the reshape2 package is used to reformat the data into
 	narrow form across the id variables "subject" and "activity"
 * the mean function is then applied through the dcast command to produce the
